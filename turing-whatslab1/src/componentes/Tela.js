@@ -50,24 +50,21 @@ class Tela extends React.Component {
         };
 
         const novoArrayMensagem = [...this.state.Mensagens, novaMensagem]
-        this.setState({Mensagens: novoArrayMensagem})
+        this.setState({Mensagens: novoArrayMensagem, Usuario: "", Mensagem: ""})
     }
 
     onKeyEnter = (event) => {
-        //  (event.keyCode === "Enter") {
-        //     const novaMensagem = {
+         if (event.key === "Enter") {
+            const novaMensagem = {
           
-        //         Usuario: this.state.Usuario,
-        //         Mensagem: this.state.Mensagem,
-        //         Id: numero++ 
+                Usuario: this.state.Usuario,
+                Mensagem: this.state.Mensagem,
+                Id: numero++ 
+              };
       
-        //       };
-      
-        //       const novoArrayMensagem = [...this.state.Mensagens, novaMensagem]
-        //       this.setState({Mensagens: novoArrayMensagem})
-    // }          
-    console.log(event.target.keyCode)
-        
+              const novoArrayMensagem = [...this.state.Mensagens, novaMensagem]
+              this.setState({Mensagens: novoArrayMensagem, Usuario: "", Mensagem: ""})
+    }          
     }
 
 
