@@ -5,7 +5,7 @@ const MensagemUsuario = styled.div`
     display:flex;
     background-color: #DCF8C6;
     height: fit-content;
-    width: 30%;
+    flex-wrap: wrap;
     border-radius: 16px;
     padding: 8px;
     margin: 16px;
@@ -15,7 +15,7 @@ const MensagemUsuario = styled.div`
 const MensagemRecebida = styled.div`
     display:flex;
     height: fit-content;
-    width: 30%;
+    flex-wrap: wrap;
     padding: 8px;
     margin: 16px;
     border-radius: 16px;
@@ -34,7 +34,7 @@ function Mensagem(props) {
                 return( 
                 <MensagemUsuario 
                     key={mensagem.Id} 
-                    onClick={(event) => props.handleClick(event)}>
+                    onDoubleClick={(event) => props.handleClick(event)}>
                     {mensagem.Mensagem}
                 </MensagemUsuario>
                 );
@@ -43,7 +43,7 @@ function Mensagem(props) {
                 return(  
                     <MensagemRecebida 
                     key={mensagem.Id} 
-                    onClick={(event) => props.handleClick(event)}>
+                    onDoubleClick={(event) => props.handleClick(event)}>
                     {mensagem.Usuario}:<br/>{mensagem.Mensagem}
                     </MensagemRecebida>
                 );
