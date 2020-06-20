@@ -30,7 +30,6 @@ function Mensagem(props) {
     return  (
         Mensagens.map( (mensagem,i ,a)=>{
             let b = i;
-            console.log("linha 22" + mensagem.Id, b)
             if( mensagem.Usuario === "eu"){
                 return( 
                 <MensagemUsuario 
