@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import Mensagem from "./Mensagem"
 
+
 const Container = styled.div `
   display: flex;
   flex-direction: column;
@@ -77,7 +78,11 @@ class Tela extends React.Component {
             Id: numero++ 
             };
             const novoArrayMensagem = [...this.state.Mensagens, novaMensagem]
-            this.setState({Mensagens: novoArrayMensagem, Usuario: "", Mensagem: ""})
+            if(this.state.Usuario === "eu"){
+                this.setState({Mensagens: novoArrayMensagem,Mensagem: ""})
+            }else{
+                this.setState({Mensagens: novoArrayMensagem, Usuario: "", Mensagem: ""})
+            }
         }
     }
 
@@ -90,7 +95,9 @@ class Tela extends React.Component {
     }
 
     handleClickEraseMenssenger = (event) =>{
-            event.target.style.display = "none";
+        if(window.confirm("Deseja Apagar essa menssagem?")){
+            event.target.style.display = "none"; 
+        }
     }
     render() {
 
